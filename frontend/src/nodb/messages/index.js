@@ -35,7 +35,7 @@ for (let s = 0; s < users.length; s++) {
           receiver: sender,
           type: "text",
           date: faker.date.recent(),
-          content: faker.lorem.sentence(Math.random() * 44).length,
+          content: faker.lorem.sentence(Math.random() * 44),
         };
         // We push this message into the current created conversation
         conversation.messages.push(sentMessage, receivedMessage);

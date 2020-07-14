@@ -12,10 +12,10 @@
     color: $white;
     height: 80px;
     min-height: 80px;
-    display: block;
     position: absolute;
     width: 100%;
     display: flex;
+    z-index: 4;
     .avatar {
       display: block;
       margin: 3% 2%;
@@ -30,6 +30,40 @@
     .name {
       font-size: 1.1rem;
       margin: 4% 10%;
+    }
+  }
+
+  /*Message Box
+    Can be Text, Image, Audio, Video
+  */
+  .messages-container {
+    max-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    .message-box {
+      max-width: 60%;
+      width: auto;
+      background-color: $searchGrey;
+      color: cornsilk;
+      margin-bottom: 35px;
+      padding: 3%;
+      border-radius: 10px;
+      align-self: flex-start;
+      /*If The message was sent by the connected user
+       we want to display it to the right
+       */
+      &.sentbyme {
+        align-self: flex-end;
+        background-color: $lightPurple;
+      }
+    }
+    /*BUTTON TO SCROLL TO THE BOTTOM*/
+    .css-1qyrjaz {
+      background-color: $white;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 20%;
     }
   }
 }

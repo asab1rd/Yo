@@ -1,6 +1,7 @@
 import { GET_MY_CONVOS } from "./actionTypes";
 import conversations from "../nodb/messages";
 export function getMyConversations(username) {
+  username = username || conversations[0].users[0].username;
   // I take only the conversations where I am
   const myConversations = conversations.filter(
     (conversation) =>

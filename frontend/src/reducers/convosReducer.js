@@ -15,8 +15,6 @@ export default function (state = { convos: initial }, { type, payload }) {
       return { ...state, convos: payload };
       break;
     case GET_MY_CONVOS:
-      // state.conversations = payload;
-      console.log(payload);
       return { ...state, convos: payload };
       break;
     case GET_MESSAGES:
