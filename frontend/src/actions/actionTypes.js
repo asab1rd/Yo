@@ -1,0 +1,13 @@
+/** USER ACTIONs */
+export const LOGIN_USER = "LOGIN_USER";
+export const AUTH_USER = "AUTH_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const REGISTER_USER = "AUTH_USER";
+
+/** MESSAGE ACTIONS */
+export const GET_CONVOS = "GET_CONVERSATIONS";
+export const GET_MIN_CONVOS = "GET_MINIMUM_CONVERSATIONS";
+export const GET_MESSAGES = "GET_MESSAGES";
+export const GET_FAVS = "GET_FAVS";
+export const SEND_MESSAGE = "SEND_MESSAGE";
+export const SEARCH_CONVO = "SEARCH_MESSAGES_IN_CONVERSATION";
