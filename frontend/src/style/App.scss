@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap");
 @import "./variables.scss";
 @import "./breakpoints.scss";
-
-
+@import "./components/conversation.scss";
+@import "./components/conversations.scss";
+@import "./components/header.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body,
 html {
   // visibility: hidden;
@@ -17,6 +23,41 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  display: flex;
+  @include media(">1560px") {
+    width: 1280px;
+    min-width: 1280px;
+    height: 70vh;
+    margin: auto;
+    margin-top: 15vh;
+  }
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  @include media("<=desktop") {
+    width: 100vw;
+    min-width: 1080px;
+    height: 100vh;
+    margin: 0;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  @include media("<=phone") {
+    width: 100vw;
+    min-width: 1080px;
+    height: 100vh;
+    margin: 0;
+  }
+}
+
+/*Styling Classes*/
 .container {
   width: 1560px;
   min-width: 1560px;
@@ -45,9 +86,6 @@ html {
   .v-center {
     align-items: center;
   }
-  .space-between {
-    justify-content: space-between;
-  }
 }
 
 .container-fluid {
@@ -57,4 +95,16 @@ html {
     display: flex;
     height: 100%;
   }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.b-black {
+  background-color: black;
 }
