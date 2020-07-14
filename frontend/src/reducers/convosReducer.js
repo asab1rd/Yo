@@ -1,6 +1,7 @@
 import {
   GET_CONVOS,
   GET_MIN_CONVOS,
+  GET_MY_CONVOS,
   GET_MESSAGES,
   GET_FAVS,
   SEND_MESSAGE,
@@ -8,12 +9,14 @@ import {
 } from "../actions/actionTypes";
 import initial from "../nodb/messages";
 
-export default function (state = initial, { type, payload }) {
+export default function (state = { convos: initial }, { type, payload }) {
   switch (type) {
     case GET_CONVOS:
       return { ...state, convos: payload };
       break;
-    case GET_MIN_CONVOS:
+    case GET_MY_CONVOS:
+      // state.conversations = payload;
+      console.log(payload);
       return { ...state, convos: payload };
       break;
     case GET_MESSAGES:

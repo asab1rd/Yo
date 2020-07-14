@@ -1,4 +1,4 @@
-import faker from "faker";
+import faker from "faker/locale/fr";
 import users from "../users";
 const MSG_NUMBERS = 55; // Amount of messages per conversation
 const conversations = [];
@@ -10,12 +10,13 @@ for (let s = 0; s < users.length; s++) {
   const sender = users[s];
 
   for (let i = s + 1; i < users.length; i++) {
-    const conversation = [];
+    const conversation = {};
     const receiver = users[i];
     // Even if sometimes we do talk to ourself :)
     if (sender !== receiver) {
       conversation.id = faker.random.uuid();
       conversation.users = [sender, receiver];
+      conversation.messages = [];
       // MESSAGES SEED could have used a while loop
       for (let m = 0; m < MSG_NUMBERS; m++) {
         const sentMessage = {
@@ -37,7 +38,7 @@ for (let s = 0; s < users.length; s++) {
           content: faker.lorem.sentence(Math.random() * 44).length,
         };
         // We push this message into the current created conversation
-        conversation.push(sentMessage, receivedMessage);
+        conversation.messages.push(sentMessage, receivedMessage);
       }
     }
     conversations.push(conversation);

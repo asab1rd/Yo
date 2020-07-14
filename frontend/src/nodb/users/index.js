@@ -1,4 +1,4 @@
-import faker from "faker";
+import faker from "faker/locale/fr";
 const MAX_USERS = 10; //Max number of fake user
 const users = [];
 for (let i = 0; i < MAX_USERS; i++) {
