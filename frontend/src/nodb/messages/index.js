@@ -13,7 +13,7 @@ for (let s = 0; s < users.length; s++) {
     const conversation = [];
     const receiver = users[i];
     // Even if sometimes we do talk to ourself :)
-    if (sender != receiver) {
+    if (sender !== receiver) {
       conversation.id = faker.random.uuid();
       conversation.users = [sender, receiver];
       // MESSAGES SEED could have used a while loop
