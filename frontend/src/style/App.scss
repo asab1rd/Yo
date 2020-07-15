@@ -45,11 +45,11 @@ html {
   min-width: 100vw;
   height: 100vh;
   @include media("<=1560px") {
-    width: 1280px;
+    width: 100%;
     min-width: 1280px;
   }
   @include media("<=desktop") {
-    width: 1080px;
+    width: 100%;
     min-width: 1080px;
   }
   @include media("<=1080px") {
