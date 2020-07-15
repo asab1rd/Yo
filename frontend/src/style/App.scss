@@ -18,6 +18,13 @@ input {
     outline: transparent;
   }
 }
+
+button {
+  border: none;
+  &:focus {
+    outline: transparent;
+  }
+}
 body,
 html {
   // visibility: hidden;
@@ -37,22 +44,17 @@ html {
   width: 100vw;
   min-width: 100vw;
   height: 100vh;
-
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
   @include media("<=desktop") {
-    width: 100vw;
+    width: 1080px;
     min-width: 1080px;
-    height: 100vh;
-    margin: 0;
   }
   @include media("<=1080px") {
     width: 100%;
     min-width: 100%;
-  }
-  @include media("<=phone") {
-    width: 100vw;
-    min-width: 1080px;
-    height: 100vh;
-    margin: 0;
   }
 }
 

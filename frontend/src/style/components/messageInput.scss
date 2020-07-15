@@ -8,6 +8,7 @@
   height: var(--inputHeight);
   display: flex;
   flex-direction: column-reverse;
+
   .wide-input {
     margin: auto;
     margin-bottom: 14px;
@@ -27,7 +28,7 @@
       border-bottom: 1px $border solid;
       &:focus {
         background-color: transparent;
-        border: 0;
+        // border: 0;
       }
     }
     .buttons-container {
@@ -52,8 +53,10 @@
   }
   .emoji-chooser {
     position: absolute;
-    bottom: 55px;
+    bottom: var(--header-height);
     right: 0;
-    display: none;
+    .emoji-picker-react {
+      box-shadow: unset;
+    }
   }
 }

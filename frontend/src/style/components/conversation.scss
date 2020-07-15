@@ -34,9 +34,6 @@
     }
   }
 
-  /*Message Box
-    Can be Text, Image, Audio, Video
-  */
   .messages-container {
     max-height: calc(100% - var(--header-height));
     overflow-y: scroll;
@@ -47,6 +44,16 @@
     width: 80%;
     margin: 0 10%;
     top: var(--header-height);
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    /* Message Box
+      Can be Text, Image, Audio, Video
+    */
     .message-box {
       max-width: 60%;
       width: auto;
