@@ -1,4 +1,5 @@
 .conversation {
+  --header-height: 70px;
   width: 60%;
   height: 100%;
   background-color: $materialBlack;
@@ -10,8 +11,8 @@
   .convo-header {
     background-color: $black;
     color: $white;
-    height: 80px;
-    min-height: 80px;
+    height: var(--header-height);
+    min-height: var(--header-height);
     position: absolute;
     width: 100%;
     display: flex;
@@ -37,10 +38,15 @@
     Can be Text, Image, Audio, Video
   */
   .messages-container {
-    max-height: 100%;
+    max-height: calc(100% - var(--header-height));
     overflow-y: scroll;
     display: flex;
     flex-direction: column-reverse;
+    position: absolute;
+    z-index: 30;
+    width: 80%;
+    margin: 0 10%;
+    top: var(--header-height);
     .message-box {
       max-width: 60%;
       width: auto;
@@ -50,6 +56,9 @@
       padding: 3%;
       border-radius: 10px;
       align-self: flex-start;
+      &:first-child {
+        margin-bottom: 80px;
+      }
       /*If The message was sent by the connected user
        we want to display it to the right
        */

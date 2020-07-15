@@ -4,10 +4,19 @@
 @import "./components/conversation.scss";
 @import "./components/conversations.scss";
 @import "./components/header.scss";
+@import "./components/messageInput.scss";
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+input {
+  border: none;
+  background-color: transparent;
+  outline: transparent;
+  &:focus {
+    outline: transparent;
+  }
 }
 body,
 html {
@@ -25,20 +34,10 @@ html {
 
 .App {
   display: flex;
-  @include media(">1560px") {
-    width: 1280px;
-    min-width: 1280px;
-    height: 70vh;
-    margin: auto;
-    margin-top: 15vh;
-  }
-  @include media("<=1560px") {
-    width: 1280px;
-    min-width: 1280px;
-    height: 80vh;
-    margin: auto;
-    margin-top: 10vh;
-  }
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+
   @include media("<=desktop") {
     width: 100vw;
     min-width: 1080px;
