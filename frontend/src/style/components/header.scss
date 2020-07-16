@@ -31,9 +31,14 @@ header.header {
         &.active {
           background-color: transparent;
         }
-        transition: 0.4s background ease-in;
         background-color: $lightPurple;
+        transition: 0.4s background ease-in;
       }
+      
+       @include media(">1080px") {
+        padding:12%
+      }
+
     }
   }
 }

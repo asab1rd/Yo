@@ -15,7 +15,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div className="experience">
+      <div className="experience" id="experience">
         <div className="logo">
           <LogoSVG />
           {/* <h1 className="accroche">THE BEST MESSENGER APP</h1> */}

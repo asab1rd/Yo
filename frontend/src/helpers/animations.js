@@ -57,6 +57,7 @@ export const logoAnimation = (setappReady) => {
   const tl = new TimelineMax({
     onComplete: () => {
       setappReady(true);
+      document.getElementById("experience").style.display = "none";
     },
   });
   const logo = ".stroke";
@@ -66,5 +67,12 @@ export const logoAnimation = (setappReady) => {
     duration: 3,
     x: from,
     rotation: 360,
-  }).to(".experience", { duration: 2, opacity: 0 });
+    fill: "red",
+  })
+    .to("#svg-y, #svg-o", {
+      duration: 2,
+      stroke: "#574caf",
+      strokeWidth: "30px",
+    })
+    .to(".experience", { duration: 2, opacity: 0 });
 };

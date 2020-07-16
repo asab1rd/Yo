@@ -10,6 +10,8 @@
       height: 100%;
       width: 100%;
       path {
+        stroke: $materialBlack;
+        stroke-width: 0px;
         visibility: hidden;
       }
     }
