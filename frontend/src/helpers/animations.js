@@ -7,7 +7,7 @@ import { TimelineMax } from "gsap";
  */
 export const animateConversationPick = (from) => {
   //ONLY IF WE ARE ON MOBILE
-  const { innerWidth: width, innerHeight: height } = window;
+  const { innerWidth: width } = window;
   if (width > 470) {
     return;
   }
@@ -36,4 +36,14 @@ export const animateConversationPick = (from) => {
     });
     tl.to(".conversations", { x: "-100%" }).to(".conversation", { x: "0" }, 0);
   }
+};
+
+export const resetTranslationOnResize = () => {
+  const { innerWidth: width } = window;
+  //ONLY IF IT'S DESKTOP
+  if (width < 470) {
+    return;
+  }
+  document.getElementById("conversations-picker").style.transform = "initial";
+  document.getElementById("conversation").style.transform = "initial";
 };

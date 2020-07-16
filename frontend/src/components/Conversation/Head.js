@@ -7,7 +7,7 @@ import {
 import { useDispatch } from "react-redux";
 import { TimelineMax } from "gsap";
 import { animateConversationPick } from "../../helpers/animations";
-function Head() {
+function Head({ user }) {
   const dispatch = useDispatch();
   const handleBack = () => {
     //SHOULD BE ONLY ON MOBILE
@@ -21,8 +21,8 @@ function Head() {
         {" "}
         <BackSVG onClick={handleBack} />{" "}
       </div>
-      <div className="avatar">JO</div>
-      <h3 className="name">JORDAN SKI CHIC</h3>
+      <img className="avatar" src={user.avatar} alt={`${user.name} avatar`} />
+      <h3 className="name">{user.name}</h3>
     </div>
   );
 }

@@ -10,6 +10,7 @@ export default function Index() {
   //so we have to show either the messages or the picker
   // const { convosVisibility } = useSelector((state) => state.mobileVisibility);
   const sender = conversations[0].users[0]; // Myself, Will change when i finish with a real connexion
+  const activeConvoId = useSelector((state) => state.conversations.current.id);
   useEffect(() => {
     dispatch(getMyConversations());
   }, []);
@@ -30,7 +31,11 @@ export default function Index() {
       <div className="convo-container">
         {conversations &&
           conversations.map((conversation) => (
-            <Bubble conversation={conversation} key={conversation.id} />
+            <Bubble
+              conversation={conversation}
+              isActive={conversation.id === activeConvoId}
+              key={conversation.id}
+            />
           ))}
       </div>
     </div>

@@ -8,6 +8,7 @@ function Index() {
   let { current } = useSelector((state) => state.conversations);
 
   const sender = current.users ? current.users[0] : null;
+  const receiver = current.users ? current.users[1] : null;
   return (
     <div
       // className={convoVisibility ? "conversation" : "conversation not-my-turn"}
@@ -16,7 +17,7 @@ function Index() {
     >
       {current && sender && (
         <>
-          <Header user={sender} />
+          <Header user={receiver} />
           <Messages messages={current.messages} sender={sender} />
           <Input />
         </>
