@@ -27,8 +27,8 @@ export default function (state = initialState, { type, payload }) {
       return { ...state, messages: payload };
 
     case SEND_MESSAGE:
-      console.log(payload);
-      return state;
+      console.log("SEND MESSAGE");
+      return { ...state, convos: payload.convos, current: payload.current };
 
     case GET_FAVS:
       return { ...state, convos: payload };

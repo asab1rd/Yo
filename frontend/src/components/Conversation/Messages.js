@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { getMyConversations } from "../../actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "./Message";
 

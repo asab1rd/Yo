@@ -5,7 +5,7 @@ import Input from "./input";
 import { useSelector } from "react-redux";
 function Index() {
   const { convoVisibility } = useSelector((state) => state.mobileVisibility);
-  let { current } = useSelector((state) => state.conversations);
+  const { current } = useSelector((state) => state.conversations);
 
   const sender = current.users ? current.users[0] : null;
   const receiver = current.users ? current.users[1] : null;

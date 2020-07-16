@@ -16,20 +16,19 @@ export function setCurrentConv(convId) {
 }
 
 // Must change if we create Group Functionnality
-export function sendMessage(convId, message) {
+export function sendMessage(convoId, message) {
   //Only the current convo
-  const currentConvo = conversations.filter(
-    (conversation) => conversation.id === convId,
+  let currentConvo = conversations.filter(
+    (conversation) => conversation.id === convoId,
   );
+  currentConvo = currentConvo[0];
   currentConvo.messages.unshift(message);
   //We also want to update all convos variable, we wouldn't do that with a real application
-  const convos = conversations.filter(
-    (conversation) => conversation.id !== convId,
-  );
+  // const convos = conversations.filter(
+  //   (conversation) => conversation.id !== convoId,
+  // );
   return {
     type: SEND_MESSAGE,
-    payload: { convos: convos, current: currentConvo },
+    payload: { convos: conversations, current: currentConvo },
   };
 }
-
-export function sendMessageInGroup(convId, userId) {}
