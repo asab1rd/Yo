@@ -47,3 +47,24 @@ export const resetTranslationOnResize = () => {
   document.getElementById("conversations-picker").style.transform = "initial";
   document.getElementById("conversation").style.transform = "initial";
 };
+
+export const logoAnimation = (setappReady) => {
+  //For responsiveness
+  const { innerWidth: width } = window;
+  let from = "-1000vw";
+
+  //App Ready
+  const tl = new TimelineMax({
+    onComplete: () => {
+      setappReady(true);
+    },
+  });
+  const logo = ".stroke";
+  tl.set(logo, { visibility: "visible" });
+  tl.from(logo, {
+    opacity: 1,
+    duration: 3,
+    x: from,
+    rotation: 360,
+  }).to(".experience", { duration: 2, opacity: 0 });
+};

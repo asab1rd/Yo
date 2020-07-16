@@ -6,10 +6,6 @@ import Bubble from "./Bubble";
 export default function Index() {
   const dispatch = useDispatch();
   const conversations = useSelector((state) => state.conversations.convos);
-  //If we are on mobile we cant plit the screen in two
-  //so we have to show either the messages or the picker
-  // const { convosVisibility } = useSelector((state) => state.mobileVisibility);
-  const sender = conversations[0].users[0]; // Myself, Will change when i finish with a real connexion
   const activeConvoId = useSelector((state) => state.conversations.current.id);
   useEffect(() => {
     dispatch(getMyConversations());

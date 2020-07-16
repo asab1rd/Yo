@@ -26,26 +26,35 @@
     z-index: 4;
     .back-btn {
       margin: 2%;
-      width: 30px;
+      width: 48px;
       fill: white;
       display: none;
       @include media("<=470px") {
-        display: block;
+        display: flex;
+        svg {
+          width: 35px;
+        }
       }
     }
     .avatar {
-      width: 10%;
+      height: 17%;
       border-radius: 50%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1%;
+      @include media("<=800px") {
+        display: block;
+      }
     }
 
     .name {
       font-size: 1.1rem;
       margin: 4% 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       @include media(">1110px") {
         margin: 3% 8%;
       }
