@@ -6,10 +6,16 @@ import {
   GET_FAVS,
   SEND_MESSAGE,
   SEARCH_CONVO,
+  SET_CURRENT_CONV,
 } from "../actions/actionTypes";
-import initial from "../nodb/messages";
+import conversations from "../nodb/messages";
 
-export default function (state = { convos: initial }, { type, payload }) {
+const initialState = {
+  convos: conversations,
+  current: conversations[0],
+};
+
+export default function (state = initialState, { type, payload }) {
   switch (type) {
     case GET_CONVOS:
       return { ...state, convos: payload };
@@ -28,6 +34,9 @@ export default function (state = { convos: initial }, { type, payload }) {
 
     case SEARCH_CONVO:
       return { ...state, convos: payload };
+
+    case SET_CURRENT_CONV:
+      return { ...state, current: payload };
 
     default:
       return state;

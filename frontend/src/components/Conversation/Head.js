@@ -6,26 +6,12 @@ import {
 } from "../../actions/designActions";
 import { useDispatch } from "react-redux";
 import { TimelineMax } from "gsap";
-
+import { animateConversationPick } from "../../helpers/animations";
 function Head() {
   const dispatch = useDispatch();
   const handleBack = () => {
     //SHOULD BE ONLY ON MOBILE
-    const tl = new TimelineMax({
-      onStart: () => {
-        document
-          .getElementById("conversations-picker")
-          .classList.remove("not-my-turn");
-      },
-      onComplete: () => {
-        document.getElementById("conversation").classList.add("not-my-turn");
-      },
-    });
-    tl.to(".conversations", { x: "0", opacity: 1 }).to(
-      ".conversation",
-      { x: "100%", opacity: 0 },
-      0,
-    );
+    animateConversationPick("back");
     dispatch(setConvVisibility(false));
     dispatch(setConvosVisibility(true));
   };

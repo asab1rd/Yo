@@ -6,7 +6,11 @@ import {
   setConvVisibility,
   setConvosVisibility,
 } from "../../actions/designActions";
+import { setCurrentConv } from "../../actions/convosActions";
+import { animateConversationPick } from "../../helpers/animations";
+
 const PREVIEW_MESSAGE_CHARS = 25;
+
 export default function Bubble({ conversation }) {
   const dispatch = useDispatch();
 
@@ -22,24 +26,11 @@ export default function Bubble({ conversation }) {
     classRemove("bubble", "active");
 
     //We can also add some fancy animations
-    const tl = new TimelineMax({
-      onStart: () => {
-        document.getElementById("conversation").classList.remove("not-my-turn");
-      },
-      onComplete: () => {
-        document
-          .getElementById("conversations-picker")
-          .classList.add("not-my-turn");
-      },
-    });
-    tl.to(".conversations", { x: "-100%", opacity: 0 }).to(
-      ".conversation",
-      { x: "0", opacity: 1 },
-      0,
-    );
+    animateConversationPick("bubble");
     //We must dispatch these actions to toggle visibility
     dispatch(setConvVisibility(true));
     dispatch(setConvosVisibility(false));
+    dispatch(setCurrentConv(conversation.id));
   };
   return (
     <div

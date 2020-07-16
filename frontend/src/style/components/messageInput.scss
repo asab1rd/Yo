@@ -38,13 +38,27 @@
         border: 0;
         border-radius: 15px;
         margin-left: 8%;
+        cursor: pointer;
         svg {
           width: 20px;
         }
         &.send {
           background-color: $lightPurple;
+          &:hover,
+          &:focus {
+            background-color: $darkPurple;
+          }
           svg {
-            fill: white;
+            fill: $white;
+          }
+        }
+        &.emoji {
+          &:hover,
+          &:focus {
+            background-color: $yellow;
+            svg {
+              fill: $white;
+            }
           }
         }
       }

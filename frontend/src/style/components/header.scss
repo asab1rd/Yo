@@ -1,8 +1,39 @@
 header.header {
   width: 5%;
   height: 100%;
+  --hd-logo-height: 10%;
+  --hd-buttons-height: 30%;
   background-color: $materialBlack;
+  display: flex;
+  flex-direction: column;
+
   @include media("<=470px") {
     display: none;
+  }
+  .logo {
+    height: var(--hd-logo-height);
+  }
+
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: var(--hd-buttons-height);
+    justify-content: space-around;
+    margin: 20vh 0;
+    .btn {
+      background-color: transparent;
+      padding: 1%;
+      &.active {
+        background-color: $lightPurple;
+      }
+      &:hover {
+        &.active {
+          background-color: transparent;
+        }
+        transition: 0.4s background ease-in;
+        background-color: $lightPurple;
+      }
+    }
   }
 }
