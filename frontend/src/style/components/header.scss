@@ -2,4 +2,7 @@ header.header {
   width: 5%;
   height: 100%;
   background-color: $materialBlack;
+  @include media("<=470px") {
+    display: none;
+  }
 }

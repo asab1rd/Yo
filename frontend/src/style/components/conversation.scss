@@ -1,10 +1,17 @@
 .conversation {
-  --header-height: 70px;
+  --header-height: 8%;
   width: 60%;
   height: 100%;
   background-color: $materialBlack;
   position: relative;
-
+  @include media("<=470px") {
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    &.not-my-turn {
+      display: none;
+    }
+  }
   /*Header in the conversation that display all the messages
   Includes Name & Avatar
   */
@@ -17,6 +24,15 @@
     width: 100%;
     display: flex;
     z-index: 4;
+    .back-btn {
+      margin: 2%;
+      width: 30px;
+      fill: white;
+      display: none;
+      @include media("<=470px") {
+        display: block;
+      }
+    }
     .avatar {
       display: block;
       margin: 3% 2%;
@@ -30,7 +46,7 @@
     }
     .name {
       font-size: 1.1rem;
-      margin: 4% 10%;
+      margin: 4% 8%;
     }
   }
 

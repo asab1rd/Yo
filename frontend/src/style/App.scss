@@ -29,7 +29,7 @@ body,
 html {
   // visibility: hidden;
   user-select: none;
-  background: $white;
+  background: $lightPurple;
   overscroll-behavior: none;
   margin: 0;
   font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -44,6 +44,10 @@ html {
   width: 100vw;
   min-width: 100vw;
   height: 100vh;
+  //For responsiveness hide
+  // .not-your-turn {
+  //   display: none;
+  // }
   @include media("<=1560px") {
     width: 100%;
     min-width: 1280px;

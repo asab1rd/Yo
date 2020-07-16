@@ -2,9 +2,15 @@ import React from "react";
 import Header from "./Head";
 import Messages from "./Messages";
 import Input from "./input";
-function index() {
+import { useSelector } from "react-redux";
+function Index() {
+  const { convoVisibility } = useSelector((state) => state.mobileVisibility);
   return (
-    <div className="conversation">
+    <div
+      // className={convoVisibility ? "conversation" : "conversation not-my-turn"}
+      className="conversation"
+      id="conversation"
+    >
       <Header />
       <Messages />
       <Input />
@@ -12,4 +18,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

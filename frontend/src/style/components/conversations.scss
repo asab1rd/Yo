@@ -5,7 +5,13 @@
   color: $white;
   position: relative;
   --conv-header-height: 200px;
-
+  @include media("<=470px") {
+    width: 100%;
+    z-index: 10;
+    &.not-my-turn {
+      display: none;
+    }
+  }
   .convo-container {
     width: 100%;
     height: calc(100% - var(--conv-header-height));
